@@ -136,10 +136,6 @@ public class Admin implements GenericEntity {
         return null;
     }
 
-    @Override
-    public String getInsertValues(int id) {
-        return "";
-    }
 
     @Override
     public String getAlias() {

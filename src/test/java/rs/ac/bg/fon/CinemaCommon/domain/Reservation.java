@@ -133,11 +133,6 @@ public class Reservation implements GenericEntity{
     }
 
     @Override
-    public String getInsertValues(int id) {
-        return "";
-    }
-
-    @Override
     public String getAlias() {
         return "r";
     }

@@ -137,11 +137,6 @@ public class User implements GenericEntity{
     }
 
     @Override
-    public String getInsertValues(int id) {
-        return "";
-    }
-
-    @Override
     public String getAlias() {
         return "u";
     }

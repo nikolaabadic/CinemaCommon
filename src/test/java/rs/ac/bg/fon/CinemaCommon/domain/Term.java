@@ -71,6 +71,36 @@ public class Term implements GenericEntity{
     }
 
     @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Term other = (Term) obj;
+        if (!Objects.equals(this.projectionType, other.projectionType)) {
+            return false;
+        }
+        if (!Objects.equals(this.date, other.date)) {
+            return false;
+        }
+        if (!Objects.equals(this.hall.getHallID(), other.hall.getHallID())) {
+            return false;
+        }
+        return true;
+    }  
+    
+    @Override
     public String getTableName() {
         return "Term";
     }
@@ -89,8 +119,6 @@ public class Term implements GenericEntity{
     public String getUpdateString() {
         return " TermID=" +termID;
     }
-    
-    
 
     @Override
     public String getInsertValues() {
@@ -152,17 +180,6 @@ public class Term implements GenericEntity{
     }
 
     @Override
-    public String getInsertValues(int id) {
-        java.sql.Timestamp Date = new java.sql.Timestamp(date.getTime());
-        StringBuilder sb = new StringBuilder();
-        sb.append("'").append(Date).append("',")
-                .append("'").append(projectionType).append("'").append(",")
-                .append(id).append(",")
-                .append(hall.getHallID());
-        return sb.toString();
-    }
-
-    @Override
     public String getAlias() {
         return " t";
     }
@@ -180,35 +197,5 @@ public class Term implements GenericEntity{
     @Override
     public String getSecondForeignKey() {
         return "hallID";
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Term other = (Term) obj;
-        if (!Objects.equals(this.projectionType, other.projectionType)) {
-            return false;
-        }
-        if (!Objects.equals(this.date, other.date)) {
-            return false;
-        }
-        if (!Objects.equals(this.hall.getHallID(), other.hall.getHallID())) {
-            return false;
-        }
-        return true;
-    }   
+    } 
 }
