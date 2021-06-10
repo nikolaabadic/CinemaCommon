@@ -99,7 +99,7 @@ public interface GenericEntity extends Serializable{
      * Returns a list of objects read from the given result set.
      * @param rs Result set which represents a SQL query result.
      * @return List of objects read from the given result set.
-     * @throws java.sql.SQLException if an unmatched key value is provided.
+     * @throws java.lang.Exception if an unmatched key value is provided.
      */
     List<GenericEntity> readList(ResultSet rs) throws Exception;
 }
