@@ -1,4 +1,4 @@
-package rs.ac.bg.fon.CinemaCommon;
+package rs.ac.bg.fon.CinemaCommon.domain;
 
 import java.io.Serializable;
 import java.sql.ResultSet;
