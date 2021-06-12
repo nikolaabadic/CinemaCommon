@@ -31,7 +31,7 @@ public class Hall implements GenericEntity{
     }
 
     /**
-     * Parameterized constructor used for initialization of Hall type objects.
+     * Parameterized constructor used for initialization of Hall type objects and setting given values.
      * @param salaID Hall identification number as an integer.
      * @param Name Hall name as a String.
      * @param capacity Number of seats as an integer.

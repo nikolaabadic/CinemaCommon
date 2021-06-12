@@ -43,7 +43,7 @@ public class Film implements GenericEntity{
     }
 
     /**
-     * Parameterized constructor used for initialization of Film type objects and sets given values.
+     * Parameterized constructor used for initialization of Film type objects and setting given values.
      * @param filmID Integer value for the film identification number.
      * @param Name	String value for the film title.
      * @param year	Integer value for the year in which the film was published.

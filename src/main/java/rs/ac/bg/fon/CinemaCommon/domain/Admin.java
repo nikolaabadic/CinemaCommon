@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Admin class.
+ * Movie theater information system Administrator class.
  * @author Nikola Abadic
  *
  */
@@ -39,7 +39,7 @@ public class Admin implements GenericEntity {
     }
 
     /**
-     * Parameterized constructor used for initialization of Admin type objects.
+     * Parameterized constructor used for initialization of Admin type objects and setting given values.
      * @param adminID User identification number as an integer.
      * @param name User's first name as a String.
      * @param surname User's last name as a String.

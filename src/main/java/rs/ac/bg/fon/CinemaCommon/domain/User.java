@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * User class.
+ * Movie theater customer class.
  * @author Nikola Abadic
  *
  */
@@ -39,7 +39,7 @@ public class User implements GenericEntity{
     }
 
     /**
-     * Parameterized constructor used for initialization of User type objects.
+     * Parameterized constructor used for initialization of User type objects and setting given values.
      * @param userID User identification number as an integer.
      * @param name User's first name as a String.
      * @param surname User's last name as a String.

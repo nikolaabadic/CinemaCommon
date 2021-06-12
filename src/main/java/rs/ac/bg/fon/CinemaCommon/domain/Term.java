@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-import org.omg.CORBA.ORB;
 
 /**
  * Movie theater projection class.
@@ -43,7 +42,7 @@ public class Term implements GenericEntity{
     }
 
     /**
-     * Parameterized constructor used for initialization of Term type objects.
+     * Parameterized constructor used for initialization of Term type objects and setting given values.
      * @param termID Term identification number as an integer.
      * @param date Term date as java.util.Date.
      * @param projectionType Projection type as a String (2D or 3D).
