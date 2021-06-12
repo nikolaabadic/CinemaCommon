@@ -41,11 +41,11 @@ public interface GenericEntity extends Serializable{
 	 */
     String getUpdateString();    
         
-	/**
-	 * Returns a String value that represents a list of key-value pairs which will be updated in the database.
-	 * 
-	 * @return Key-value pairs of update values as a String.
-	 */
+    /**
+     * Returns a String value that represents a list of key-value pairs which will be updated in the database.
+     * @param entity Object which will be updated in the database.
+     * @return Key-value pairs of update values as a String.
+     */
     String getUpdateValues(GenericEntity entity);
 
 	/**
