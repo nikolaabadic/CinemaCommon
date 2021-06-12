@@ -10,7 +10,7 @@ import java.util.Objects;
 import org.omg.CORBA.ORB;
 
 /**
- * Term class.
+ * Movie theater projection class.
  * @author Nikola Abadic
  *
  */
