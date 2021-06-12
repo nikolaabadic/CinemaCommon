@@ -7,16 +7,48 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Term implements GenericEntity{
-    private int termID;
-    private Date date;
-    private String projectionType;
-    private Film film;
-    private Hall hall;
 
+/**
+ * Movie theater projection class.
+ * @author Nikola Abadic
+ *
+ */
+public class Term implements GenericEntity{
+	/**
+	 * Term identification number.
+	 */
+    private int termID;
+    /**
+     * Term date in which a film will be shown.
+     */
+    private Date date;
+    /**
+     * Film projection type (2D or 3D).
+     */
+    private String projectionType;
+    /**
+     * Film which will be shown.
+     */
+    private Film film;
+    /**
+     * Hall in which the film will be shown.
+     */
+    private Hall hall;
+    
+    /**
+     * Non-parameterized constructor used for initialization of Term type objects.
+     */
     public Term() {
     }
 
+    /**
+     * Parameterized constructor used for initialization of Term type objects and setting given values.
+     * @param termID Term identification number as an integer.
+     * @param date Term date as java.util.Date.
+     * @param projectionType Projection type as a String (2D or 3D).
+     * @param film Film which will be shown.
+     * @param hall Hall in which the film will be shown.
+     */
     public Term(int termID, Date date, String projectionType, Film film, Hall hall) {
         this.termID = termID;
         this.date = date;
@@ -25,51 +57,134 @@ public class Term implements GenericEntity{
         this.hall = hall;
     }
 
+    /**
+     * Returns a Hall object in which the film will be shown.
+     * @return Hall object in which the film will be shown.
+     */
     public Hall getHall() {
         return hall;
     }
 
+    /**
+     * Sets the hall in which the film will be shown.
+     * @param hall Hall object in which the film will be shown. 
+     */
     public void setHall(Hall hall) {
         this.hall = hall;
     }
 
+    /**
+     * Returns the term identification number
+     * @return Term identification number as an integer.
+     */
     public int getTermID() {
         return termID;
     }
 
+    /**
+     * Sets the term identification number.
+     * @param termID Term identification number as an integer.
+     */
     public void setTermID(int termID) {
         this.termID = termID;
     }
 
+    /**
+     * Returns the term date in which the film will be shown.
+     * @return java.util.Date in which the film will be shown.
+     */
     public Date getDate() {
         return date;
     }
 
+    /**
+     * Sets the term date in which the film will be shown.
+     * @param date java.util.Date in which the film will be shown.
+     */
     public void setDate(Date date) {
         this.date = date;
     }
-
+    
+    /**
+     * Returns the term projection type (2D or 3D). 
+     * @return Term projection type as a String (2D or 3D).
+     */
     public String getProjectionType() {
         return projectionType;
     }
 
+    /**
+     * Sets the term projection type (2D or 3D).
+     * @param projectionType Projection type as a String (2D or 3D).
+     */
     public void setProjectionType(String projectionType) {
         this.projectionType = projectionType;
     }
-
+    
+    /**
+     * Returns a Film object which will be shown.
+     * @return Film object which will be shown.
+     */
     public Film getFilm() {
         return film;
     }
-
+    
+    /**
+     * Sets the film which will be shown.
+     * @param film Film object which will be shown.
+     */
     public void setFilm(Film film) {
         this.film = film;
     }
 
+    /**
+     * Returns a String which contains all the information about the term.
+     */
     @Override
     public String toString() {
         return film.getName() + " " + date + " " + hall.getName() + " " + projectionType;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    /**
+     * Compares two terms and returns true if they are equal, and false if not.
+     * Terms are compared by their date, hall and projection type.
+     * 
+     * @return
+     *  <ul>
+	 *		<li>true - if both given object are type Term, and have the same date, hall and projection type.</li>
+	 * 		<li>false - in all other cases.</li>
+	 * </ul>
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Term other = (Term) obj;
+        if (!Objects.equals(this.projectionType, other.projectionType)) {
+            return false;
+        }
+        if (!Objects.equals(this.date, other.date)) {
+            return false;
+        }
+        if (!Objects.equals(this.hall.getHallID(), other.hall.getHallID())) {
+            return false;
+        }
+        return true;
+    }  
+    
     @Override
     public String getTableName() {
         return "Term";
@@ -89,8 +204,6 @@ public class Term implements GenericEntity{
     public String getUpdateString() {
         return " TermID=" +termID;
     }
-    
-    
 
     @Override
     public String getInsertValues() {
@@ -152,17 +265,6 @@ public class Term implements GenericEntity{
     }
 
     @Override
-    public String getInsertValues(int id) {
-        java.sql.Timestamp Date = new java.sql.Timestamp(date.getTime());
-        StringBuilder sb = new StringBuilder();
-        sb.append("'").append(Date).append("',")
-                .append("'").append(projectionType).append("'").append(",")
-                .append(id).append(",")
-                .append(hall.getHallID());
-        return sb.toString();
-    }
-
-    @Override
     public String getAlias() {
         return " t";
     }
@@ -180,35 +282,5 @@ public class Term implements GenericEntity{
     @Override
     public String getSecondForeignKey() {
         return "hallID";
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Term other = (Term) obj;
-        if (!Objects.equals(this.projectionType, other.projectionType)) {
-            return false;
-        }
-        if (!Objects.equals(this.date, other.date)) {
-            return false;
-        }
-        if (!Objects.equals(this.hall.getHallID(), other.hall.getHallID())) {
-            return false;
-        }
-        return true;
-    }   
+    } 
 }

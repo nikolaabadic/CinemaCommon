@@ -7,15 +7,41 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/** 
+ * Movie theatre ticket reservation class.
+ * @author Nikola Abadic
+ *
+ */
 public class Reservation implements GenericEntity{
+	/**
+	 * Term for which the reservation is created.
+	 */
     private Term term;
+    /**
+     * Reservation owner.
+     */
     private User user;
+    /**
+     * Date of reservation.
+     */
     private Date reservationDate;
+    /** 
+     * Number of tickets reserved.
+     */
     private int numberOfTickets;
-
+    
+    /**
+     * Non-parameterized constructor used for initialization of Reservation type objects.
+     */
     public Reservation() {
     }
-
+    /**
+     * Parameterized constructor used for initialization of Reservation type objects and setting given values.
+     * @param term Term for which the reservation is created.
+     * @param user Reservation owner as an User object.
+     * @param reservationDate Reservation date as java.util.Date.  
+     * @param numberOfTickets Number of tickets reserved as an integer.
+     */
     public Reservation(Term term, User user, Date reservationDate, int numberOfTickets) {
         this.term = term;
         this.user = user;
@@ -23,34 +49,66 @@ public class Reservation implements GenericEntity{
         this.numberOfTickets=numberOfTickets;
     }
 
+    /**
+     * Returns the reservation date.
+     * @return java.util.Date of reservation.
+     */
     public Date getReservationDate() {
         return reservationDate;
     }
-
+    
+    /**
+     * Sets the reservation date. 
+     * @param reservationDate java.util.Date of reservation.
+     */
     public void setReservationDate(Date reservationDate) {
         this.reservationDate = reservationDate;
     }
 
+    /**
+     * Returns a Term for which the reservation was created.
+     * @return Term object for which the reservation was created. 
+     */
     public Term getTerm() {
         return term;
     }
 
+    /**
+     * Sets the term for which the reservation was created. 
+     * @param term Term object for which the reservation was created.
+     */
     public void setTerm(Term term) {
         this.term = term;
     }
 
+    /**
+     * Returns the reservation owner.
+     * @return User object which created the reservation.
+     */
     public User getUser() {
         return user;
     }
-
+    
+    /**
+     * Sets the reservation owner.
+     * @param user User object which created the reservation.
+     */
     public void setUser(User user) {
         this.user = user;
     }
 
+    /**
+     * Returns the number of reserved tickets created.
+     * @return Number of tickets as an integer.
+     */
     public int getNumberOfTickets() {
         return numberOfTickets;
     }
 
+    /**
+     * Sets the number of reserved tickets created.
+     * @param numberOfTickets Number of tickets as an integer.
+     */
     public void setNumberOfTickets(int numberOfTickets) {
         this.numberOfTickets = numberOfTickets;
     }
@@ -130,11 +188,6 @@ public class Reservation implements GenericEntity{
     @Override
     public List<GenericEntity> getList() {
         return null;
-    }
-
-    @Override
-    public String getInsertValues(int id) {
-        return "";
     }
 
     @Override

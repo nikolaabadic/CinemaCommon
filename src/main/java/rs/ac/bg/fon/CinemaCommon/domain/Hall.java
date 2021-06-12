@@ -5,44 +5,94 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Movie theater hall class.
+ * @author Nikola Abadic
+ *
+ */
 public class Hall implements GenericEntity{
+	/**
+	 * Integer value for the hall identification number.
+	 */
     int hallID;
+    /**
+     * Hall name.
+     */
     String name;
+    /**
+     * Integer value for the number of seats in the hall.
+     */
     int capacity;
 
+    /**
+     * Non-parameterized constructor used for initialization of Hall type objects.
+     */
     public Hall() {
     }
 
+    /**
+     * Parameterized constructor used for initialization of Hall type objects and setting given values.
+     * @param salaID Hall identification number as an integer.
+     * @param Name Hall name as a String.
+     * @param capacity Number of seats as an integer.
+     */
     public Hall(int salaID, String Name, int capacity) {
         this.hallID = salaID;
         this.name = Name;
         this.capacity = capacity;
     }
-
+    
+    /**
+     * Returns the hall identification number.
+     * @return Hall identification number as an integer.
+     */
     public int getHallID() {
         return hallID;
     }
-
+    
+    /**
+     * Sets the hall identification number.
+     * @param hallID Hall identification number as an integer.
+     */
     public void setHallID(int hallID) {
         this.hallID = hallID;
     }
 
+    /**
+     * Returns a String value of the hall name.
+     * @return Hall name as a String.
+     */
     public String getName() {
         return name;
     }
-
+    
+    /**
+     * Sets the hall name.
+     * @param Name Hall name as a String.
+     */
     public void setName(String Name) {
         this.name = Name;
     }
-
+    
+    /**
+     * Returns the number of seats.
+     * @return Number of seats as an integer.
+     */
     public int getCapacity() {
         return capacity;
     }
 
+    /**
+     * Sets the number of seats in the hall.
+     * @param capacity Number of seats as an integer.
+     */
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
+    /**
+     * Returns the hall name.
+     */
     @Override
     public String toString() {
         return name;
@@ -108,11 +158,6 @@ public class Hall implements GenericEntity{
     @Override
     public List<GenericEntity> getList() {
         return null;
-    }
-
-    @Override
-    public String getInsertValues(int id) {
-        return "";
     }
 
     @Override
