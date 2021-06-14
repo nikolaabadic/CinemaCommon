@@ -198,7 +198,7 @@ public class Film implements GenericEntity{
     @Override
     public List<GenericEntity> readList(ResultSet rs) throws SQLException {
         List<GenericEntity> list = new ArrayList<>();
-        
+
         while(rs.next()){
             list.add(new Film( rs.getInt("FilmID"),
                                rs.getString("Name"),
@@ -206,7 +206,7 @@ public class Film implements GenericEntity{
                                rs.getInt("Duration"),
                                rs.getString("Language")      
             ));
-        }        
+        }
         
         return list;
     }
