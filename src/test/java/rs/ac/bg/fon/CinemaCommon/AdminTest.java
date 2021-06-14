@@ -40,6 +40,7 @@ public class AdminTest {
 		assertNotNull(admin);
 	}
 	
+	@Test
 	void testParameterizedConstructor() {
 		admin = new Admin(1, "name", "lastname", "username", "password");
 		assertNotNull(admin);

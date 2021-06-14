@@ -6,8 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
@@ -16,9 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
-import rs.ac.bg.fon.CinemaCommon.domain.Film;
 import rs.ac.bg.fon.CinemaCommon.domain.GenericEntity;
-import rs.ac.bg.fon.CinemaCommon.domain.Term;
 import rs.ac.bg.fon.CinemaCommon.domain.User;
 
 public class UserTest {
@@ -44,6 +40,7 @@ public class UserTest {
 		assertNotNull(user);
 	}
 	
+	@Test
 	void testParameterizedConstructor() {
 		user = new User(1, "name", "lastname", "username", "password");
 		assertNotNull(user);
