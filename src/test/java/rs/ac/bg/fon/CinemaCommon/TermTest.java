@@ -99,12 +99,7 @@ public class TermTest {
 	
 	@Test
 	void testToString() {
-		assertEquals("name " + term.getDate() + " name 2D", term.toString());
-		
-		System.out.println("****************************");
-		System.out.println(new Date(1000L));
-		System.out.println("****************************");
-		
+		assertEquals("name " + term.getDate() + " name 2D", term.toString());	
 	}
 	
 	
